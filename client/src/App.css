@@ -1,0 +1,299 @@
+/*** GENERAL ***/
+
+.App {
+  width: 100%;
+  height: auto;
+  /* min-height: ; */
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  background-color: #283135;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+html {
+  background-color: #283135;
+}
+
+/*** NAVIGATION ***/
+
+nav .navbar-collapse {
+  position: fixed;
+  top: 90px !important;
+  /* background: #343a40d0;   */
+  background: #384449;
+  left: -0.1%;
+  top: -100%;
+  padding-left: 10px;
+  width: 15vw;
+  height: 90vh;
+  display: block;
+  /* transition: right 0.5s ease-in-out; transition for smooth sliding */
+  transition-duration: right 1s;
+  transition-timing-function: ease-in-out;
+}
+
+nav .navbar-collapse.show {
+  /* left: 0; push the menu back to viewport */
+  top: 0;
+}
+
+/* Set the position of the navbar to absolute and aligned it to the top left. Set the z-index and the width. */
+#navbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.navbar {
+  background-color: #384449;
+  height: 90px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100% !important;
+  position: fixed;
+  padding: 0 !important;
+}
+
+.nav-container-1 {
+  padding-left: 20px;
+  width: 45.5%;
+}
+
+.nav-container-2 {
+  width: 54.5%;
+}
+
+/* Set the font colour of the navigation links. */
+.nav-link {
+  padding: 20px 0px !important;
+  color: #ffffff !important;
+}
+
+/* Set for the nav links' font colour to change once hovered over. */
+.nav-link:hover,
+.dropdown-item:hover {
+  color: teal !important;
+  background-color: transparent !important;
+}
+
+.dropdown-menu {
+  background-color: #343a40 !important;
+  border: none !important;
+  color: #ffffff !important;
+  padding: 0 !important;
+}
+
+.dropdown-toggle::after {
+  margin-left: 8px !important;
+}
+
+.dropdown-item {
+  padding: 20px 20px !important;
+  background-color: #384449 !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+}
+
+/* Set the position of the nav to relative and set the left margin. */
+.navbar-nav {
+  padding-top: 30px;
+  padding-left: 15px !important;
+}
+
+/* Set the background colour of the dropdown menu, added a border (coloured, styled and sized) and set for it to float to the right. */
+.generalnav {
+  background-color: transparent !important;
+  border: 1px solid #ffffff !important;
+  float: right !important;
+  width: 210px !important;
+}
+
+#logo {
+  max-width: 140px;
+}
+
+/* --- Landing Page --- */
+/* Set the height of the landing page, as well as the text and content alignment. */
+#landing {
+  text-align: center;
+  align-content: center;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 625px !important;
+  overflow-y: hidden;
+}
+
+/* Set the size (height x width) of the landing image. */
+#landingimage {
+  width: 100%;
+  height: auto;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Set the landing content container's position to absolute and aligned it to the center of the page using the top, left margins and transform
+feature. */
+#landingcontent {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, 0);
+}
+
+/* Set the margins and padding of the landing column. */
+/* .content-col, */
+.landingcol {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Set the width, bottom margin and font colour, size and alignment of the brand name's header. Also implemented a text shadow to make it stand 
+out more.*/
+#brandname {
+  width: 840px;
+  margin-bottom: 20px;
+  font-size: 4.5vw !important;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: #000000 3px -1px 5px;
+}
+
+/* Set the bottom margin and font colour of the slogan header. Also implemented a text shadow to make it stand out more. */
+#slogan {
+  margin-bottom: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 2.25vw;
+  text-shadow: #000000 3px 3px 2px;
+}
+
+/* Set the background colour and gradient, padding, the border (styled, sized and coloured) and border radius of the "Get Started" button. */
+#landingbutton {
+  background-color: #00000054;
+  /* background-image: radial-gradient(#00000031 0%, #343a403d 74%); */
+  padding: 8px;
+  border: 1px solid #555555ad;
+  border-radius: 10px;
+}
+
+/* Set for the button's font colour to increase once hovered over. */
+#landingbutton:hover {
+  color: #008080 !important;
+}
+
+#brandname {
+  font-size: 40px;
+}
+
+/*** ABOUT PAGE ***/
+
+#ross {
+  margin-bottom: 13px;
+  width: 340px;
+}
+
+#about-text {
+  padding-left: 45px !important;
+}
+
+#about-founder {
+  font-style: oblique;
+  color: teal;
+}
+
+/*** SERVICES PAGE ***/
+
+.service-card {
+  padding: 20px !important;
+  margin-bottom: 20px !important;
+  background-color: #384449 !important;
+}
+
+.service-img {
+  width: 500px !important;
+}
+
+.service-header {
+  padding: 10px 10px !important;
+  margin-bottom: 30px !important;
+  font-size: 2vw;
+}
+
+.service-text {
+  padding: 0px 10px !important;
+}
+
+/*** CONTACT PAGE ***/
+
+.container {
+  padding-top: 27px !important;
+  margin-bottom: 10px;
+}
+
+.contact-col {
+  margin-left: 25px;
+}
+
+header {
+  display: flex !important;
+  flex-direction: row !important;
+  margin-top: 80px !important;
+  margin-bottom: 5px !important;
+}
+
+.subheading {
+  color: #8b8b8b;
+  font-weight: 400;
+  margin-top: 23px;
+  margin-left: 10px;
+}
+
+#contact-image {
+  margin-left: 5px;
+}
+
+.contact-icons {
+  font-size: 0.9rem;
+  margin-top: 2px;
+  margin-right: 15px;
+}
+
+#social-col {
+  margin-top: 20px;
+}
+
+.social-icons {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.social-icons:hover {
+  color: teal;
+}
+
+/* Set the required label's asterisks and the font colour. */
+.form-group.required .control-label:after {
+  content: "(Required)";
+  font-weight: bold;
+  font-size: 0.7rem;
+  color: teal;
+}
+
+#contactmessage {
+  width: 350px;
+  height: 100px;
+}
+
+.appbutton {
+  margin-top: 10px;
+  background-color: #23292c !important;
+  border-color: #000000 !important;
+}
+
+.appbutton:hover {
+  background-color: teal !important;
+}
