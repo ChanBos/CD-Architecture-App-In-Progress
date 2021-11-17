@@ -13,8 +13,11 @@ import Landing from "./screens/Landing";
 import About from "./screens/About";
 import Services from "./screens/Services";
 import Residential from "./screens/Residential";
-// import Commercial from "./screens/Commercial";
+import Commercial from "./screens/Commercial";
 import Contact from "./screens/Contact";
+import Register from "./screens/Register";
+import Login from "./screens/Login";
+import Admin from "./screens/Admin";
 
 const App = (props) => {
   return (
@@ -38,7 +41,6 @@ const App = (props) => {
       <Row className="flex-xl-nowrap">
         <Col as={Navbar} xs={12} md={3} lg={2} />
         <Navbar />
-        {/* </Col> */}
         <Col className="content-col">
           {props.children}
           <BrowserRouter>
@@ -46,8 +48,11 @@ const App = (props) => {
             <Route path="/about" exact component={About} />
             <Route path="/services" exact component={Services} />
             <Route path="/residential/getall" exact component={Residential} />
-            {/* <Route path="/commercial/getall" exact component={Commercial} /> */}
+            <Route path="/commercial/getall" exact component={Commercial} />
             <Route path="/contact" exact component={Contact} />
+            <Route path="/register" exact component={Register} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/admin" exact component={Admin} />
           </BrowserRouter>
         </Col>
       </Row>

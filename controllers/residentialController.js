@@ -24,19 +24,43 @@ exports.getByIDController = async (req, res) => {
 
 /**
  * POST/ CREATE:
- * @required  Body properties: residential, description, image 1, 2, 3.
+ * @required  Body properties: residential, description, image 1 - 10.
  * @param {*} req Creating a new post request with the residential project's props.
  * @param {*} res Data for a specific residential project that has been added.
  * @returns Data of the residential project that is being added from the request input or an error message should the
  * request be unsuccessful.
  */
 exports.addController = async (req, res) => {
-  const { residential, description, image1, image2, image3 } = req.body;
+  const {
+    residential,
+    description,
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6,
+    image7,
+    image8,
+    image9,
+    image10,
+  } = req.body;
 
   const newresidential = new Residential({
     name: residential,
     description,
-    imageUrls: [image1, image2, image3],
+    imageUrls: [
+      image1,
+      image2,
+      image3,
+      image4,
+      image5,
+      image6,
+      image7,
+      image8,
+      image9,
+      image10,
+    ],
   });
   try {
     await newresidential.save();

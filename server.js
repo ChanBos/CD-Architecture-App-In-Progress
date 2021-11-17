@@ -17,7 +17,7 @@ const dbConfig = require("./config/app.config.js");
 // Requiring the routes files.
 const commercialRouter = require("./routes/commercialRouter.js");
 const residentialRouter = require("./routes/residentialRouter.js");
-// const usersRouter = require("./routes/usersRouter.js");
+const usersRouter = require("./routes/usersRouter.js");
 
 /**
  * Enabling App usages.
@@ -66,7 +66,7 @@ mongoose.connection.on("error", () => {
 // Enabling the api app to use the routes from the commercialRouter.js, residentialRouter and usersRouter.js files.
 app.use("/commercial", commercialRouter);
 app.use("/residential", residentialRouter);
-// app.use("/users", usersRouter);
+app.use("/users", usersRouter);
 
 // Checking if the process is production mode and set for the index.html file from the build folder to be utilized, instead of the public folder.
 const path = require("path");

@@ -24,19 +24,43 @@ exports.getByIDController = async (req, res) => {
 
 /**
  * POST/ CREATE:
- * @required  Body properties: commercial, rentPerDay, maxCount, description, type, image 1, 2, 3.
+ * @required  Body properties: commercial, description, image 1 - 10.
  * @param {*} req Creating a new post request with the commercial project's props.
  * @param {*} res Data for a specific commercial project that has been added.
  * @returns Data of the commercial project that is being added from the request input or an error message should the
  * request be unsuccessful.
  */
 exports.addController = async (req, res) => {
-  const { commercial, description, image1, image2, image3 } = req.body;
+  const {
+    commercial,
+    description,
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6,
+    image7,
+    image8,
+    image9,
+    image10,
+  } = req.body;
 
   const newcommercial = new Commercial({
     name: commercial,
     description,
-    imageUrls: [image1, image2, image3],
+    imageUrls: [
+      image1,
+      image2,
+      image3,
+      image4,
+      image5,
+      image6,
+      image7,
+      image8,
+      image9,
+      image10,
+    ],
   });
   try {
     await newcommercial.save();

@@ -26,7 +26,7 @@ import Loader from "../components/Loader";
  * @returns A container with data displayed in rows and columns with a loading feature.
  */
 
-const Residential = () => {
+const Commercial = () => {
   const [resProjects, setResProjects] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
@@ -39,8 +39,8 @@ const Residential = () => {
     (async () => {
       try {
         setLoading(true);
-        const residential = (await axios.get("/residential/getall")).data;
-        setResProjects(residential);
+        const commercial = (await axios.get("/commercial/getall")).data;
+        setResProjects(commercial);
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -54,30 +54,30 @@ const Residential = () => {
       <Row>
         <header>
           <h1>PROJECTS</h1>
-          <h6 className="subheading">&#x2f;&#x2f; RESIDENTIAL PROJECTS</h6>
+          <h6 className="subheading">&#x2f;&#x2f; COMMERCIAL PROJECTS</h6>
         </header>
       </Row>
       <Row>
         {loading ? (
           <Loader />
         ) : (
-          resProjects.map((residential, i) => {
+          resProjects.map((commercial, i) => {
             return (
               <Card className="service-card" key={i}>
                 <Row>
                   <Col className="service-container-1">
                     <Card.Img
-                      src={residential.imageUrls[0]}
-                      alt="residential"
+                      src={commercial.imageUrls[0]}
+                      alt="commercial"
                       className="smallimg"
                     />
                   </Col>
                   <Col className="service-container-2">
                     <Card.Header className="service-header">
-                      {residential.name}
+                      {commercial.name}
                     </Card.Header>
                     <Card.Text className="service-text">
-                      {residential.description}
+                      {commercial.description}
                     </Card.Text>
                     <Button
                       onClick={handleShow}
@@ -95,17 +95,17 @@ const Residential = () => {
                       size="lg"
                     >
                       <Modal.Header closeButton>
-                        <h5>{residential.name}</h5>
+                        <h5>{commercial.name}</h5>
                       </Modal.Header>
-                      <Modal.Body id="residentialdetails">
+                      <Modal.Body id="commercialdetails">
                         <Carousel variant="dark">
-                          {residential.imageUrls.map((url, i) => {
+                          {commercial.imageUrls.map((url, i) => {
                             return (
                               <Carousel.Item key={i}>
                                 <img
                                   className="d-block w-100 bigimg"
                                   src={url}
-                                  alt="residential"
+                                  alt="commercial"
                                 />
                               </Carousel.Item>
                             );
@@ -124,4 +124,4 @@ const Residential = () => {
   );
 };
 
-export default Residential;
+export default Commercial;

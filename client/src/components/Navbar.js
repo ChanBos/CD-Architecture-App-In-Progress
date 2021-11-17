@@ -15,6 +15,14 @@ import { Nav, Navbar, Image, NavDropdown } from "react-bootstrap";
  */
 
 const Navigation = () => {
+  // const user = JSON.parse(localStorage.getItem("currentUser"));
+
+  // const logout = () => {
+  //   localStorage.removeItem("currentUser");
+  //   localStorage.removeItem("token");
+  //   window.location.href = "/login";
+  // };
+
   return (
     <div id="navbar">
       <Navbar collapseOnSelect expand={false} variant="dark" sticky="top">
@@ -33,9 +41,9 @@ const Navigation = () => {
                 <NavDropdown.Item href="/residential/getall">
                   Residential
                 </NavDropdown.Item>
-                {/* <NavDropdown.Item href="/commercial/getall">
+                <NavDropdown.Item href="/commercial/getall">
                   Commercial
-                </NavDropdown.Item> */}
+                </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link href="/contact">Contact</Nav.Link>
             </Nav>
@@ -46,6 +54,11 @@ const Navigation = () => {
             <Image src="./images/Logo.png" alt="Logo" id="logo" fluid />
           </Navbar.Brand>
         </div>
+        {/* <div id="authbuttoncontainer">
+          <SignUp />
+          <h6 id="authbuttonheader">OR</h6>
+          <Login />
+        </div> */}
       </Navbar>
     </div>
   );
