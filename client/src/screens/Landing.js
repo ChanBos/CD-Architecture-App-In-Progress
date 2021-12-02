@@ -15,9 +15,9 @@ AOS.init({
 
 /**
  * Created a landing page for the application.
- * Added animations on the <h1> element (zoom-in) and the <h3> element (zoom-out).
- * Utilized React-router-dom's Link to create a button link to the home page.
- * @returns A page with two animated headers and a button that redirects the user to the home page.
+ * Set the Bootsrap column's width and added animations on the <h1> element (zoom-in) and the <h3> element (zoom-out).
+ * Utilized React-router-dom's Link to create a button link to the contact page.
+ * @returns A page with an image, two animated headers and a button that redirects the user to the home page.
  */
 
 const Landing = () => {

@@ -14,5 +14,5 @@ const Success = ({ message }) => {
   );
 };
 
-// Exporting Success.js to Booking.js and Home.js.
+// Exporting Success.js to Login.js and Register.js.
 export default Success;

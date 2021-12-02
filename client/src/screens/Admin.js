@@ -2,6 +2,7 @@
 import React from "react";
 // Importing tabs from Ant Design.
 import { Tabs } from "antd";
+import "antd/dist/antd.css";
 // Imported components from React Bootstrap.
 import { Container, Row } from "react-bootstrap";
 // Imported components.
@@ -21,7 +22,6 @@ const { TabPane } = Tabs;
 const Admin = () => {
   return (
     <Container>
-      {/* <div className="ml-3"> */}
       <Row>
         <header>
           <h1>ADMIN</h1>
@@ -32,18 +32,15 @@ const Admin = () => {
         <TabPane tab="Projects" key="1">
           <Row>
             <AdminRes />
+            <AddRes />
             <AdminComm />
+            <AddComm />
           </Row>
         </TabPane>
-        <TabPane tab="Add Project" key="2">
-          <AddRes />
-          <AddComm />
-        </TabPane>
-        <TabPane tab="Users" key="3">
+        <TabPane tab="Users" key="2">
           <Users />
         </TabPane>
       </Tabs>
-      {/* </div> */}
     </Container>
   );
 };

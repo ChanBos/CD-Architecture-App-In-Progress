@@ -48,8 +48,6 @@ const uri = `mongodb+srv://${dbConfig.DB_USERNAME}:${dbConfig.DB_PASSWORD}@clust
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  // useFindAndModify: false,
-  // useCreateIndex: true,
 });
 
 // Logging a confirmation message to the console should the connection be successful.

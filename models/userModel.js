@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 /**
  * Created a model, defining the schema of the users in order to save and retrieve data.
  * Set the type of the name, email and password to strings and isAdmin to a boolean.
- * Set the isAdmin's default value to false.
+ * Set the isAdmin's default value to true.
  * Added timestamps to show when the information has been updated
  */
 

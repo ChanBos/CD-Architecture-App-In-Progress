@@ -2,6 +2,14 @@
 import React from "react";
 // Imported components from React Bootstrap.
 import { Container, Row, Col, Card } from "react-bootstrap";
+// Importing AOS Animate on Scroll Library and the scripts and styles.
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+// Initializing the AOS functionality and setting the duration of the animation.
+AOS.init({
+  duration: 3000,
+});
 
 const Services = () => {
   return (
@@ -13,12 +21,12 @@ const Services = () => {
         </header>
       </Row>
       <Row>
-        <Card className="service-card">
+        <Card className="service-card" data-aos="zoom-in">
           <Row>
             <Col className="service-container-1">
               <Card.Img
                 src="./images/ProfessionalArchitecturalServices.png"
-                alt=""
+                alt="Professional Architectural Services"
                 className="service-img"
               />
             </Col>
@@ -40,7 +48,7 @@ const Services = () => {
           </Row>
         </Card>
 
-        <Card className="service-card">
+        <Card className="service-card" data-aos="zoom-in-right">
           <Row>
             <Col className="service-container-2">
               <Card.Header className="service-header">
@@ -60,19 +68,19 @@ const Services = () => {
             <Col className="service-container-1">
               <Card.Img
                 src="./images/DevelopmentPlanning.png"
-                alt=""
+                alt="Development Planning"
                 className="service-img"
               />
             </Col>
           </Row>
         </Card>
 
-        <Card className="service-card">
+        <Card className="service-card" data-aos="zoom-in-left">
           <Row>
             <Col className="service-container-1">
               <Card.Img
                 src="./images/ArchitecturalGraphics.png"
-                alt=""
+                alt="Architectural Graphics"
                 className="service-img"
               />
             </Col>
@@ -93,7 +101,7 @@ const Services = () => {
           </Row>
         </Card>
 
-        <Card className="service-card">
+        <Card className="service-card" data-aos="zoom-in-right">
           <Row>
             <Col className="service-container-2">
               <Card.Header className="service-header">
@@ -112,7 +120,7 @@ const Services = () => {
             <Col className="service-container-1">
               <Card.Img
                 src="./images/Photography.png"
-                alt=""
+                alt="Photography"
                 className="service-img"
               />
             </Col>
@@ -123,4 +131,5 @@ const Services = () => {
   );
 };
 
+// Exporting Services.js to App.js.
 export default Services;

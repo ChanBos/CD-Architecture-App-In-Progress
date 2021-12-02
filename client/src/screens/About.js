@@ -2,6 +2,20 @@
 import React from "react";
 // Imported components from React Bootstrap.
 import { Container, Col, Image, Row } from "react-bootstrap";
+// Importing AOS Animate on Scroll Library and the scripts and styles.
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+// Initializing the AOS functionality and setting the duration of the animation.
+AOS.init({
+  duration: 3000,
+});
+
+/**
+ * Created an About page to display the company information.
+ * Set the Bootstrap column's width and implemented AOS library to animate the image.
+ * @returns An image with the founder's photo and a text quotation from the founder.
+ */
 
 const About = () => {
   return (
@@ -11,7 +25,7 @@ const About = () => {
         <h6 className="subheading">&#x2f;&#x2f; OUR COMPANY</h6>
       </header>
       <Row>
-        <Col className="col-md-4">
+        <Col className="col-md-4" data-aos="fade-zoom-in">
           <Image src="./images/Ross3.jpg" alt="Ross" id="ross" fluid />
         </Col>
         <Col id="about-text">
@@ -56,4 +70,5 @@ const About = () => {
   );
 };
 
+// Exporting About.js to App.js.
 export default About;

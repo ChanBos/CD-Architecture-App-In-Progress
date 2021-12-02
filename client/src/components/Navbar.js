@@ -64,5 +64,5 @@ const Navigation = () => {
   );
 };
 
-// Exporting Navbar to App.js
+// Exporting Navigation.js to App.js
 export default Navigation;

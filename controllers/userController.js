@@ -17,6 +17,8 @@ const jwtConfig = require("../config/app.config.js");
  * If all is in order, a new user will be created in the database and the credentials will be saved.
  * The generated token will expire in 24 hours.
  * Generating the token and returning this, as well as with the status (200 - ok) and a message.
+ * @param {*} req User's name, email and password.
+ * @param {*} res The token and the message.
  */
 
 exports.registerController = (req, res) => {
@@ -48,6 +50,8 @@ exports.registerController = (req, res) => {
  * Checking whether the user exists and using Bcrypt’s compareSync() method to compare the password sent with the request to the password in the
  * database.
  * If they match the token is signed and the expiration time set to 24 hours.
+ * @param {*} req User's email and password.
+ * @param {*} res The token and the status (200 - ok).
  */
 
 exports.loginController = (req, res) => {
@@ -75,6 +79,8 @@ exports.loginController = (req, res) => {
  * Finding the user by ID and setting for the password to not be returned along with the rest of the data.
  * If an error occurs, status 500 will be returned with an error.
  * If all is in order, the user's data will be verified and returned.
+ * @param {*} req Information sent by the user.
+ * @param {*} res Information sent back to the user.
  */
 
 exports.getUserDataController = (req, res) => {
@@ -91,6 +97,9 @@ exports.getUserDataController = (req, res) => {
  * Created a function for admin members to get a list of all of the existing users from the database.
  * If all is in order the list of users will be returned.
  * If an error occurs status 400 and an error message will be returned.
+ * @param {*} req Information sent from the client.
+ * @param {*} res Information sent back to the client.
+ * @returns Information on all the existing users.
  */
 
 exports.getUsersController = async (req, res) => {
@@ -106,6 +115,8 @@ exports.getUsersController = async (req, res) => {
  * GET/ READ:
  * Created a function to allow a user to log out.
  * Setting the token to null to end the session.
+ * @param {*} req Information sent from the client.
+ * @param {*} res Information sent back to the client.
  */
 
 exports.logOutController = (req, res) => {
@@ -118,6 +129,8 @@ exports.logOutController = (req, res) => {
  * User with the matching id to be returned and updated with the new user.
  * Updated copy of the content (copyContent).
  * Fetching the information of one user by id for updating. Using $set to set the information for the relevant user with the matching id.
+ * @param {*} req Information sent from the client.
+ * @param {*} res Information sent back to the client.
  */
 
 exports.updateOneController = (req, res) => {
@@ -138,7 +151,7 @@ exports.updateOneController = (req, res) => {
 
 /**
  * DELETE:
- * @required  Body properties: id.
+ * @required Body properties: id.
  * @param {*} req User with the matching id to be deleted.
  * @param {*} res Updated copy of the content (copyContent).
  * @returns List of users and a confirmation message is returned to confirm that the post has been deleted or an error message should the

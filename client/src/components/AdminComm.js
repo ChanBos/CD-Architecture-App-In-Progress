@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 // Requiring Axios.
 import axios from "axios";
+// Imported components from React Bootstrap.
+import { Col } from "react-bootstrap";
 // Imported components.
 import Error from "./Error";
 import Loader from "./Loader";
@@ -13,7 +15,6 @@ import RemoveComm from "./RemoveComm";
  * The page's loading is set to true from it's initial state of being false, then once the data is returned or an error occurs to false.
  * If all is in order the list of commercial projects will be displayed. If an error occurs an error will be displayed.
  * Utilizing the map() method to iterate over the array and to return the data.
- * Utlilized the toFixed() method to return the total with two decimal places.
  */
 
 const AdminComm = () => {
@@ -36,8 +37,8 @@ const AdminComm = () => {
   }, []);
 
   return (
-    <div className="col-md-11">
-      <h1>Commercial Projects</h1>
+    <Col className="col-md-12 admin-container">
+      <h5>COMMERCIAL PROJECTS</h5>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -45,7 +46,7 @@ const AdminComm = () => {
       ) : (
         <div>
           <table className="table table-bordered table-dark">
-            <thead className="bs">
+            <thead>
               <tr>
                 <th>Project Id:</th>
                 <th>Name:</th>
@@ -69,7 +70,7 @@ const AdminComm = () => {
           </table>
         </div>
       )}
-    </div>
+    </Col>
   );
 };
 

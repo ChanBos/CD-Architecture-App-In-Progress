@@ -5,25 +5,6 @@ const Commercial = require("../models/commercialModel.js");
 
 /**
  * POST/ CREATE:
- * @required  Body properties: _id
- * @param {*} req Creating a new post request with the commercial project's id.
- * @param {*} res Data for a specific commercial project that matches the requested id.
- * @returns Data of the commercial project that matches the id of the request input or an error message should the
- * request be unsuccessful.
- */
-
-exports.getByIDController = async (req, res) => {
-  const commercialId = req.body.commercialId;
-  try {
-    const commercial = await Commercial.findOne({ _id: commercialId });
-    res.json(commercial);
-  } catch (error) {
-    return res.status(400).json({ error });
-  }
-};
-
-/**
- * POST/ CREATE:
  * @required  Body properties: commercial, description, image 1 - 10.
  * @param {*} req Creating a new post request with the commercial project's props.
  * @param {*} res Data for a specific commercial project that has been added.

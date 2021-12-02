@@ -1,5 +1,5 @@
 // Requiring JWT.
-var jwt = require("jsonwebtoken"); // used to create, sign, and verify tokens
+var jwt = require("jsonwebtoken");
 // Requiring JWT secret.
 const { JWT_SECRET } = require("../config/app.config.js");
 
@@ -8,6 +8,10 @@ const { JWT_SECRET } = require("../config/app.config.js");
  * Checking the header or url parameters or post parameters for token.
  * Verifying the secret and checking the expiration date.
  * If all is in order, saving to request for use in other routes.
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ * @returns A verification method to check if there is a token and to check the validity.
  */
 
 const verifyToken = (req, res, next) => {

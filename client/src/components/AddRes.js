@@ -6,12 +6,17 @@ import axios from "axios";
 import { Row, Col, Button } from "react-bootstrap";
 // Imported Swal from sweetalert2.
 import Swal from "sweetalert2";
+// Imported Font Awesome library and icons.
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Set the initial states of the props.
- * Admin can add a new residential by entering data for the following input sections: res, description, image 1 - 10.
+ * Admin can add a new residential project by entering data for the following input sections: comm, description, image 1 - 10.
  * If all is in order the project will be added and a success alert will be displayed. If an error occurs an error will be displayed.
  * Called for the state to be set onChange().
+ * @param {*} res
+ * @returns A container with a row and a column. The row contains a form with the following input fields: comm, description, image 1 - 10.
  */
 
 const AddRes = (res) => {
@@ -27,6 +32,11 @@ const AddRes = (res) => {
   const [image8, setImage8] = useState("");
   const [image9, setImage9] = useState("");
   const [image10, setImage10] = useState("");
+  const [isOpened, setIsOpened] = useState(false);
+
+  const toggle = () => {
+    setIsOpened((wasOpened) => !wasOpened);
+  };
 
   const addRes = async () => {
     const resobj = {
@@ -59,136 +69,142 @@ const AddRes = (res) => {
   };
 
   return (
-    <div>
-      <Row>
-        <h1>Add Residential Project</h1>
+    <Col>
+      <Row className="col-md-12">
+        <h6 className="admin-subheading">Add Residential Project</h6>
+        <Button className="btn btn-primary appbutton admin-button">
+          <FontAwesomeIcon icon={faPlus} onClick={toggle} />
+        </Button>
       </Row>
-      <Row>
-        <Col className="col-md-5">
-          <input
-            type="text"
-            className="form-control mt-1"
-            placeholder="Name"
-            value={residential}
-            onChange={(e) => {
-              setRespro(e.target.value);
-            }}
-          />
 
-          <input
-            type="text"
-            className="form-control mt-1"
-            placeholder="Description"
-            value={description}
-            onChange={(e) => {
-              setDescription(e.target.value);
-            }}
-          />
-        </Col>
+      {isOpened && (
+        <Row>
+          <Col className="col-md-6">
+            <input
+              type="text"
+              className="form-control mt-1"
+              placeholder="Name"
+              value={residential}
+              onChange={(e) => {
+                setRespro(e.target.value);
+              }}
+            />
 
-        <Col className="col-md-6">
-          <input
-            type="text"
-            className="form-control mt-1"
-            placeholder="Image URL 1"
-            value={image1}
-            onChange={(e) => {
-              setImage1(e.target.value);
-            }}
-          />
-          <input
-            type="text"
-            className="form-control mt-1"
-            placeholder="Image URL 2"
-            value={image2}
-            onChange={(e) => {
-              setImage2(e.target.value);
-            }}
-          />
-          <input
-            type="text"
-            className="form-control mt-1"
-            placeholder="Image URL 3"
-            value={image3}
-            onChange={(e) => {
-              setImage3(e.target.value);
-            }}
-          />
-          <input
-            type="text"
-            className="form-control mt-1"
-            placeholder="Image URL 4"
-            value={image4}
-            onChange={(e) => {
-              setImage4(e.target.value);
-            }}
-          />{" "}
-          <input
-            type="text"
-            className="form-control mt-1"
-            placeholder="Image URL 5"
-            value={image5}
-            onChange={(e) => {
-              setImage5(e.target.value);
-            }}
-          />{" "}
-          <input
-            type="text"
-            className="form-control mt-1"
-            placeholder="Image URL 6"
-            value={image6}
-            onChange={(e) => {
-              setImage6(e.target.value);
-            }}
-          />{" "}
-          <input
-            type="text"
-            className="form-control mt-1"
-            placeholder="Image URL 7"
-            value={image7}
-            onChange={(e) => {
-              setImage7(e.target.value);
-            }}
-          />{" "}
-          <input
-            type="text"
-            className="form-control mt-1"
-            placeholder="Image URL 8"
-            value={image8}
-            onChange={(e) => {
-              setImage8(e.target.value);
-            }}
-          />{" "}
-          <input
-            type="text"
-            className="form-control mt-1"
-            placeholder="Image URL 9"
-            value={image9}
-            onChange={(e) => {
-              setImage9(e.target.value);
-            }}
-          />{" "}
-          <input
-            type="text"
-            className="form-control mt-1"
-            placeholder="Image URL 10"
-            value={image10}
-            onChange={(e) => {
-              setImage10(e.target.value);
-            }}
-          />
-          <div className="mt-1 text-right">
-            <Button
-              className="btn btn-primary appbutton"
-              variant="success"
-              onClick={addRes}
-            >
-              ADD PROJECT
-            </Button>
-          </div>
-        </Col>
-      </Row>
-    </div>
+            <textarea
+              type="text"
+              className="form-control mt-1 project-description-area"
+              placeholder="Description"
+              value={description}
+              onChange={(e) => {
+                setDescription(e.target.value);
+              }}
+            ></textarea>
+          </Col>
+
+          <Col className="col-md-6">
+            <input
+              type="text"
+              className="form-control mt-1"
+              placeholder="Image URL 1"
+              value={image1}
+              onChange={(e) => {
+                setImage1(e.target.value);
+              }}
+            />
+            <input
+              type="text"
+              className="form-control mt-1"
+              placeholder="Image URL 2"
+              value={image2}
+              onChange={(e) => {
+                setImage2(e.target.value);
+              }}
+            />
+            <input
+              type="text"
+              className="form-control mt-1"
+              placeholder="Image URL 3"
+              value={image3}
+              onChange={(e) => {
+                setImage3(e.target.value);
+              }}
+            />
+            <input
+              type="text"
+              className="form-control mt-1"
+              placeholder="Image URL 4"
+              value={image4}
+              onChange={(e) => {
+                setImage4(e.target.value);
+              }}
+            />{" "}
+            <input
+              type="text"
+              className="form-control mt-1"
+              placeholder="Image URL 5"
+              value={image5}
+              onChange={(e) => {
+                setImage5(e.target.value);
+              }}
+            />{" "}
+            <input
+              type="text"
+              className="form-control mt-1"
+              placeholder="Image URL 6"
+              value={image6}
+              onChange={(e) => {
+                setImage6(e.target.value);
+              }}
+            />{" "}
+            <input
+              type="text"
+              className="form-control mt-1"
+              placeholder="Image URL 7"
+              value={image7}
+              onChange={(e) => {
+                setImage7(e.target.value);
+              }}
+            />{" "}
+            <input
+              type="text"
+              className="form-control mt-1"
+              placeholder="Image URL 8"
+              value={image8}
+              onChange={(e) => {
+                setImage8(e.target.value);
+              }}
+            />{" "}
+            <input
+              type="text"
+              className="form-control mt-1"
+              placeholder="Image URL 9"
+              value={image9}
+              onChange={(e) => {
+                setImage9(e.target.value);
+              }}
+            />{" "}
+            <input
+              type="text"
+              className="form-control mt-1"
+              placeholder="Image URL 10"
+              value={image10}
+              onChange={(e) => {
+                setImage10(e.target.value);
+              }}
+            />
+            <div className="mt-1 text-right">
+              <Button
+                className="btn btn-primary appbutton"
+                variant="success"
+                onClick={addRes}
+              >
+                ADD PROJECT
+              </Button>
+            </div>
+          </Col>
+        </Row>
+      )}
+    </Col>
   );
 };
 

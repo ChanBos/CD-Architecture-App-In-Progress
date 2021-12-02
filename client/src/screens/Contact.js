@@ -11,11 +11,20 @@ import {
   faInstagram,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
+// Importing AOS Animate on Scroll Library and the scripts and styles.
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+// Initializing the AOS functionality and setting the duration of the animation.
+AOS.init({
+  duration: 3000,
+});
 
 /**
- * Created a contact page to display the resort's contact details, an image and a operational control form submission.
- * Added links to social media accounts and to the location's map.
+ * Created a contact page to display the company's contact details, an image and an operational control form submission.
+ * Added links to social media accounts.
  * Set a row with three columns to display the sections.
+ * @returns An image, the contact information, social media links and a form to submit a message.
  */
 
 const Contact = () => {
@@ -26,7 +35,7 @@ const Contact = () => {
         <h6 className="subheading">&#x2f;&#x2f; REACH OUT TO US</h6>
       </header>
       <Row>
-        <Col className="col-md-5">
+        <Col className="col-md-5" data-aos="fade-zoom-in">
           <Image src="./images/Contact5.jpg" alt="Get Started" fluid />
         </Col>
         <Col className="col-md-3 contact-col">
@@ -148,12 +157,7 @@ const Contact = () => {
               ></textarea>
               <br />
               <div>
-                <Button
-                  type="submit"
-                  value="submit"
-                  className="appbutton"
-                  // variant="success"
-                >
+                <Button type="submit" value="submit" className="appbutton">
                   Send
                 </Button>
               </div>

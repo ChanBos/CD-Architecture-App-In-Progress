@@ -1,23 +1,72 @@
 /*** GENERAL ***/
-
-.App {
+/* Set the size (height x width), margins, padding, background colour, as well as the font family, size, color and weight. */
+.App,
+#root {
   width: 100%;
   height: auto;
   margin: 0;
   padding: 0;
+  background: #283135;
   font-family: "Raleway", sans-serif !important;
   font-weight: 300;
-  background-color: #283135;
   color: #ffffff;
   font-size: 0.9rem;
 }
 
-html {
-  background-color: #283135;
+/* Set the heigth of all pages. */
+#root {
+  height: 100%;
 }
 
-/*** NAVIGATION ***/
+/* Set the backgorund colour of all pages. */
+html {
+  background: #283135;
+}
 
+/* Set the top padding and the bottom margins of the page container elements. */
+.container {
+  padding-top: 27px !important;
+  margin-bottom: 10px;
+}
+
+/* Set for all headers to display as flex row and set the top and bottom margins. */
+header {
+  display: flex !important;
+  flex-direction: row !important;
+  margin-top: 80px !important;
+  margin-bottom: 5px !important;
+}
+
+/* Set the font colour of all h1 and h5 headers, as well as icons and the contact page's "Connect With Us" header */
+h1,
+h5,
+.svg-inline--fa,
+#connectheader {
+  color: #e6e6e6 !important;
+}
+
+/* Set the top and left margins, as well as the font weight and colour. */
+.subheading {
+  margin-top: 23px;
+  margin-left: 10px;
+  color: #8b8b8b;
+  font-weight: 400;
+}
+
+/* Set the top margin, as well as the background and border colours of the app's buttons. */
+.appbutton {
+  margin-top: 10px;
+  background: #23292c !important;
+  border-color: #000000 !important;
+}
+
+/* Set for the app buttons' colour to change once hovered over. */
+.appbutton:hover {
+  background: teal !important;
+}
+
+/*** NAVIGATION ****************************************************************************************************************** ***/
+/* Set the */
 nav .navbar-collapse {
   position: fixed;
   top: 90px !important;
@@ -46,7 +95,7 @@ nav .navbar-collapse.show {
 }
 
 .navbar {
-  background-color: #384449;
+  background: #384449;
   height: 90px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -64,7 +113,7 @@ nav .navbar-collapse.show {
   width: 54.5%;
 }
 
-/* Set the font colour of the navigation links. */
+/* Set the padding and font colour of the navigation links. */
 .nav-link {
   padding: 20px 0px !important;
   color: #ffffff !important;
@@ -74,11 +123,10 @@ nav .navbar-collapse.show {
 .nav-link:hover,
 .dropdown-item:hover {
   color: teal !important;
-  background-color: transparent !important;
 }
 
 .dropdown-menu {
-  background-color: #343a40 !important;
+  background: #343a40 !important;
   border: none !important;
   color: #ffffff !important;
   padding: 0 !important;
@@ -90,7 +138,7 @@ nav .navbar-collapse.show {
 
 .dropdown-item {
   padding: 20px 20px !important;
-  background-color: #384449 !important;
+  background: #384449 !important;
   color: #ffffff !important;
   font-size: 0.9rem !important;
 }
@@ -103,29 +151,30 @@ nav .navbar-collapse.show {
 
 /* Set the background colour of the dropdown menu, added a border (coloured, styled and sized) and set for it to float to the right. */
 .generalnav {
-  background-color: transparent !important;
+  background: transparent !important;
   border: 1px solid #ffffff !important;
   float: right !important;
-  width: 210px !important;
 }
 
+/* Set the maximum width of the logo. */
 #logo {
   max-width: 140px;
 }
 
 /* --- Landing Page --- */
-/* Set the height of the landing page, as well as the text and content alignment. */
+/* Set the height of the landing page, the margins, padding and the overflow to hidden, as well as the text and content alignment. */
 #landing {
-  text-align: center;
-  align-content: center;
-  margin: 0 !important;
-  padding: 0 !important;
   height: 625px !important;
   overflow-y: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center;
+  align-content: center;
 }
 
-/* Set the size (height x width) of the landing image. */
-#landingimage {
+/* Set the size (height x width), margins and padding of the landing column and image. */
+#landingimage,
+.landingcol {
   width: 100%;
   height: auto;
   margin: 0 !important;
@@ -137,19 +186,12 @@ feature. */
 #landingcontent {
   position: absolute;
   left: 50%;
-  top: 35%;
+  top: 36%;
   transform: translate(-50%, 0);
 }
 
-/* Set the margins and padding of the landing column. */
-/* .content-col, */
-.landingcol {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
 /* Set the width, bottom margin and font colour, size and alignment of the brand name's header. Also implemented a text shadow to make it stand 
-out more.*/
+out more. */
 #brandname {
   width: 840px;
   margin-bottom: 20px;
@@ -159,7 +201,7 @@ out more.*/
   text-shadow: #000000 3px -1px 5px;
 }
 
-/* Set the bottom margin and font colour of the slogan header. Also implemented a text shadow to make it stand out more. */
+/* Set the bottom margin and font colour and size of the slogan header. Also implemented a text shadow to make it stand out more. */
 #slogan {
   margin-bottom: 20px;
   color: rgb(255, 255, 255);
@@ -169,117 +211,120 @@ out more.*/
 
 /* Set the background colour and gradient, padding, the border (styled, sized and coloured) and border radius of the "Get Started" button. */
 #landingbutton {
-  background-color: #00000054;
+  background: #00000054;
   padding: 8px;
   border: 1px solid #555555ad;
   border-radius: 10px;
 }
 
-/* Set for the button's font colour to increase once hovered over. */
+/* Set for the button's font colour to change once hovered over. */
 #landingbutton:hover {
   color: #008080 !important;
 }
 
-#brandname {
-  font-size: 40px;
-}
-
 /*** ABOUT PAGE ***/
-
+/* Set the width and bottom margin of the about page's image. */
 #ross {
-  margin-bottom: 13px;
   width: 340px;
+  margin-bottom: 13px;
 }
 
+/* Set the left padding of the about page's text area. */
 #about-text {
   padding-left: 45px !important;
 }
 
+/* Set the font style and the colour of the quotation reference. */
 #about-founder {
   font-style: oblique;
   color: teal;
 }
 
-/*** SERVICES PAGE ***/
-
+/*** SERVICES AND PROJECTS PAGES ***/
+/* Set the padding, bottom margin and the background colour of the service and projects' pages' cards. */
 .service-card {
   padding: 20px !important;
   margin-bottom: 20px !important;
-  background-color: #384449 !important;
+  background: #384449 !important;
 }
 
+/* Set the width of the service page's card images. */
 .service-img {
   width: 500px !important;
 }
 
+/* Set the padding, bottom margin and the font colour of the card headings. */
 .service-header {
   padding: 10px 10px !important;
   margin-bottom: 30px !important;
   font-size: 2vw;
 }
 
+/* Set the padding of the cards' text areas. */
 .service-text {
   padding: 0px 10px !important;
 }
 
+/* Set the background colour, the font family and colour, as well as the border's colour of the modal headers, bodies and content. */
 .modal-content,
 .modal-header,
 .modal-body {
-  background-color: #384449 !important;
+  background: #384449 !important;
   color: #ffffff;
   font-family: "Raleway", sans-serif !important;
   border: transparent !important;
 }
 
-/*** CONTACT PAGE ***/
-
-.container {
-  padding-top: 27px !important;
-  margin-bottom: 10px;
+/* Set the bottom padding of the modal headers. */
+.modal-header {
+  padding-bottom: 0px !important;
 }
 
+/* Set the top and bottom padding of the modal bodies. */
+.modal-body {
+  padding-top: 10px !important;
+  padding-bottom: 45px !important;
+}
+
+/* Set the bottom margin of the carousel indicators. */
+.carousel-indicators {
+  margin-bottom: -35px;
+}
+
+/*** CONTACT PAGE ***/
+/* Set the left margin of the with the contact information. */
 .contact-col {
   margin-left: 25px;
 }
 
-header {
-  display: flex !important;
-  flex-direction: row !important;
-  margin-top: 80px !important;
-  margin-bottom: 5px !important;
-}
-
-.subheading {
-  color: #8b8b8b;
-  font-weight: 400;
-  margin-top: 23px;
-  margin-left: 10px;
-}
-
+/* Set the left margin of the contact page's image. */
 #contact-image {
   margin-left: 5px;
 }
 
+/* Set the top and right margins, as well as the font size of the contact icons. */
 .contact-icons {
-  font-size: 0.9rem;
   margin-top: 2px;
   margin-right: 15px;
+  font-size: 0.9rem;
 }
 
+/* Set the top margin of the "Connect With Us" element. */
 #social-col {
   margin-top: 20px;
 }
 
+/* Set the font size of the social media icons. */
 .social-icons {
-  color: #ffffff;
   font-size: 1.5rem;
 }
 
+/* Set for the social media icons to change colour once hovered over. */
 .social-icons:hover {
-  color: teal;
+  color: teal !important;
 }
 
-/* Set the required label's asterisks and the font colour. */
+/* Set the required label's content and the font colour, weight and size. */
 .form-group.required .control-label:after {
   content: "(Required)";
   font-weight: bold;
@@ -287,17 +332,73 @@ header {
   color: teal;
 }
 
+/* Set the size (height x width) of the message input area. */
 #contactmessage {
-  width: 350px;
   height: 100px;
+  width: 350px;
 }
 
-.appbutton {
-  margin-top: 10px;
-  background-color: #23292c !important;
-  border-color: #000000 !important;
+/*** ADMIN PAGE ***/
+/* Set the font colour of the admin page's tabs. */
+.ant-tabs,
+.ant-tabs-content {
+  color: #ffffff !important;
 }
 
-.appbutton:hover {
-  background-color: teal !important;
+/* Set for the font colour and pointer to change once the tabs are hovered over. */
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn,
+.ant-tabs-tab:hover,
+.fa-trash-alt:hover {
+  color: teal !important;
+  cursor: pointer;
+}
+
+/* Set for the tabs' font weight to change once it is accessed. */
+.ant-tabs-tab.ant-tabs-tab-active {
+  font-weight: bold !important;
+}
+
+/* Set the background colour of the tabs' bar. */
+.ant-tabs-ink-bar {
+  background: teal !important;
+}
+
+/* Set the top margin of the admin container. */
+.admin-container {
+  margin-top: 20px !important;
+}
+
+/* Set the top padding, the bottom margins and the font colour of the subheadings. */
+.admin-subheading {
+  padding-top: 4px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Set the size (height x width), the top and left margins, as well as the padding of the buttons. */
+.admin-button {
+  height: 26px;
+  width: 26px;
+  margin-top: 0px !important;
+  margin-left: 10px;
+  padding: 0px !important;
+}
+
+/* Set the width, left padding, border radius and the font colour of the user edit input areas. */
+.usereditinput {
+  width: 250px !important;
+  padding-left: 10px;
+  border-radius: 5px;
+  color: #000000;
+}
+
+/* Set the minimum height of the project description input area. */
+.project-description-area {
+  min-height: 374px !important;
+}
+
+/* Set the font colour and weight of the the note word. */
+#note-font {
+  color: teal;
+  font-weight: bold;
 }

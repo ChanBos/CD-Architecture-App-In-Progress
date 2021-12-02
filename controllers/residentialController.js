@@ -5,25 +5,6 @@ const Residential = require("../models/residentialModel.js");
 
 /**
  * POST/ CREATE:
- * @required  Body properties: _id
- * @param {*} req Creating a new post request with the residential project's id.
- * @param {*} res Data for a specific residential project that matches the requested id.
- * @returns Data of the residential project that matches the id of the request input or an error message should the
- * request be unsuccessful.
- */
-
-exports.getByIDController = async (req, res) => {
-  const residentialId = req.body.residentialId;
-  try {
-    const residential = await Residential.findOne({ _id: residentialId });
-    res.json(residential);
-  } catch (error) {
-    return res.status(400).json({ error });
-  }
-};
-
-/**
- * POST/ CREATE:
  * @required  Body properties: residential, description, image 1 - 10.
  * @param {*} req Creating a new post request with the residential project's props.
  * @param {*} res Data for a specific residential project that has been added.

@@ -14,5 +14,5 @@ const Error = ({ message }) => {
   );
 };
 
-// Exporting Error.js to Booking.js and Home.js.
+// Exporting Error.js to Login.js and Register.js.
 export default Error;

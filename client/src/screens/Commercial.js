@@ -14,15 +14,22 @@ import {
 } from "react-bootstrap";
 // Imported components.
 import Loader from "../components/Loader";
+// Importing AOS Animate on Scroll Library and the scripts and styles.
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+// Initializing the AOS functionality and setting the duration of the animation.
+AOS.init({
+  duration: 3000,
+});
 
 /**
  * Set the initial states of the properties.
  * Utilized the useEffect() hook to get/ read the information from the database and respond displaying the data. If an error occurs the error
  * will be displayed.
  * Set loading to true before the data is returned and false after. Also set loading to false if there is an error.
- * Utlized the Ant Design library to add a from/ to date picker. Utilizing position 0 of the array to list the from date and position 1 for the
- * to date. Utilizing Moment to adjust the format of the dates. The dates will be updated via the onChange() function.
- * Iterating over the data via map() to return the data that is imported from the Room component.
+ * Implemented the AOS library to animate the card elements.
+ * Iterating over the data via map() to return the data from the database.
  * @returns A container with data displayed in rows and columns with a loading feature.
  */
 
@@ -63,16 +70,16 @@ const Commercial = () => {
         ) : (
           resProjects.map((commercial, i) => {
             return (
-              <Card className="service-card" key={i}>
+              <Card className="service-card" key={i} data-aos="fade-up">
                 <Row>
-                  <Col className="service-container-1">
+                  <Col>
                     <Card.Img
                       src={commercial.imageUrls[0]}
                       alt="commercial"
                       className="smallimg"
                     />
                   </Col>
-                  <Col className="service-container-2">
+                  <Col>
                     <Card.Header className="service-header">
                       {commercial.name}
                     </Card.Header>
@@ -124,4 +131,5 @@ const Commercial = () => {
   );
 };
 
+// Exporting Commercial.js to App.js.
 export default Commercial;
