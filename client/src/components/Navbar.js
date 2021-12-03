@@ -51,7 +51,7 @@ const Navigation = () => {
         </div>
         <div className="nav-container-2">
           <Navbar.Brand href="/">
-            <Image src="./images/Logo.png" alt="Logo" id="logo" fluid />
+            <Image src={process.env.PUBLIC_URL + '/images/Logo.png'} alt="Logo" id="logo" fluid />
           </Navbar.Brand>
         </div>
         <div>

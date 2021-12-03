@@ -46,7 +46,7 @@ const Commercial = () => {
     (async () => {
       try {
         setLoading(true);
-        const commercial = (await axios.get("/commercial/getall")).data;
+        const commercial = (await axios.get("http://localhost:8080/commercial/getall")).data;
         setResProjects(commercial);
         setLoading(false);
       } catch (error) {
