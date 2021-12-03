@@ -1,36 +1,40 @@
 // Imported React library and hooks.
-import React, { useState, useEffect } from "react";
-// Requiring Axios.
-import axios from "axios";
-// Imported components from React Bootstrap.
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Button,
-  Modal,
-  Carousel,
-} from "react-bootstrap";
-// Imported components.
-import Loader from "../components/Loader";
+import "aos/dist/aos.css";
+
 // Importing AOS Animate on Scroll Library and the scripts and styles.
 import AOS from "aos";
-import "aos/dist/aos.css";
+// Requiring Axios.
+import axios from "axios";
+import React, {useEffect, useState} from "react";
+// Imported components from React Bootstrap.
+import {
+  Button,
+  Card,
+  Carousel,
+  Col,
+  Container,
+  Modal,
+  Row,
+} from "react-bootstrap";
+
+// Imported components.
+import Loader from "../components/Loader";
 
 // Initializing the AOS functionality and setting the duration of the animation.
 AOS.init({
-  duration: 3000,
+  duration : 3000,
 });
 
 /**
  * Set the initial states of the properties.
- * Utilized the useEffect() hook to get/ read the information from the database and respond displaying the data. If an error occurs the error
- * will be displayed.
- * Set loading to true before the data is returned and false after. Also set loading to false if there is an error.
- * Implemented the AOS library to animate the card elements.
- * Iterating over the data via map() to return the data from the database.
- * @returns A container with data displayed in rows and columns with a loading feature.
+ * Utilized the useEffect() hook to get/ read the information from the database
+ * and respond displaying the data. If an error occurs the error will be
+ * displayed. Set loading to true before the data is returned and false after.
+ * Also set loading to false if there is an error. Implemented the AOS library
+ * to animate the card elements. Iterating over the data via map() to return the
+ * data from the database.
+ * @returns A container with data displayed in rows and columns with a loading
+ *     feature.
  */
 
 const Residential = () => {
