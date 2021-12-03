@@ -1,7 +1,7 @@
 // Imported React library.
 import React from "react";
 // Imported components from React Bootstrap.
-import {Button, Image, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import { Button, Image, Nav, Navbar, NavDropdown } from "react-bootstrap";
 // Importing Font Awesome library.
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -41,22 +41,32 @@ const Navigation = () => {
                 variant="dark"
               >
                 <NavDropdown.Item href="/residential/getall">
-  Residential <
-      /NavDropdown.Item>
-                <NavDropdown.Item href="/commercial /
-          getall ">
-  Commercial</NavDropdown.Item>
+                  Residential{" "}
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  href="/commercial /
+          getall "
+                >
+                  Commercial
+                </NavDropdown.Item>
               </NavDropdown>
-      <Nav.Link href = "/contact">Contact</Nav.Link>
+              <Nav.Link href="/contact">Contact</Nav.Link>
             </Nav>
-      </Navbar.Collapse>
-        </div><div className = "nav-container-2">
-      <Navbar.Brand href = "/">
-      <Image src = {process.env.PUBLIC_URL + '/images/Logo.png'} alt =
-           "Logo" id = "logo" fluid /></Navbar.Brand>
-        </div><div><
-      Button
-  className = "btn btn-primary appbutton admin-login-button"
+          </Navbar.Collapse>
+        </div>
+        <div className="nav-container-2">
+          <Navbar.Brand href="/">
+            <Image
+              src={process.env.PUBLIC_URL + "/images/Logo.png"}
+              alt="Logo"
+              id="logo"
+              fluid
+            />
+          </Navbar.Brand>
+        </div>
+        <div>
+          <Button
+            className="btn btn-primary appbutton admin-login-button"
             href="/login"
           >
             ADMIN LOGIN

@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 // Requiring Axios.
 import axios from "axios";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 // Imported components from React Bootstrap.
 import {
   Button,
@@ -22,7 +22,7 @@ import Loader from "../components/Loader";
 
 // Initializing the AOS functionality and setting the duration of the animation.
 AOS.init({
-  duration : 3000,
+  duration: 3000,
 });
 
 /**
@@ -50,7 +50,9 @@ const Commercial = () => {
     (async () => {
       try {
         setLoading(true);
-        const commercial = (await axios.get("http://localhost:8080/commercial/getall")).data;
+        const commercial = (
+          await axios.get("http://localhost:8080/commercial/getall")
+        ).data;
         setResProjects(commercial);
         setLoading(false);
       } catch (error) {
