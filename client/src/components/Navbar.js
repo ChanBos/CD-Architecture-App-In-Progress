@@ -1,17 +1,19 @@
 // Imported React library.
 import React from "react";
 // Imported components from React Bootstrap.
-import { Button, Nav, Navbar, Image, NavDropdown } from "react-bootstrap";
+import { Button, Image, Nav, Navbar, NavDropdown } from "react-bootstrap";
 // Importing Font Awesome library.
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 /**
- * Created a navigation function to display a navbar that changes, depending on whether the user is logged in or not.
- * Parsed the user's name that is stored in local storage and returning this as the dropdown value.
- * To allow a user to log out I created a function that removes the user from local storage. This will redirect them to the login page.
- * If the user is logged in, their name will display and they will have the option to logout.
- * All pages are displayed: Landing, Home, Profile, About, Activities, Contact and Logout.
+ * Created a navigation function to display a navbar that changes, depending on
+ * whether the user is logged in or not. Parsed the user's name that is stored
+ * in local storage and returning this as the dropdown value. To allow a user to
+ * log out I created a function that removes the user from local storage. This
+ * will redirect them to the login page. If the user is logged in, their name
+ * will display and they will have the option to logout. All pages are
+ * displayed: Landing, Home, Profile, About, Activities, Contact and Logout.
  */
 
 const Navigation = () => {
@@ -39,9 +41,12 @@ const Navigation = () => {
                 variant="dark"
               >
                 <NavDropdown.Item href="/residential/getall">
-                  Residential
+                  Residential{" "}
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/commercial/getall">
+                <NavDropdown.Item
+                  href="/commercial /
+          getall "
+                >
                   Commercial
                 </NavDropdown.Item>
               </NavDropdown>
@@ -51,7 +56,12 @@ const Navigation = () => {
         </div>
         <div className="nav-container-2">
           <Navbar.Brand href="/">
-            <Image src="./images/Logo.png" alt="Logo" id="logo" fluid />
+            <Image
+              src={process.env.PUBLIC_URL + "/images/Logo.png"}
+              alt="Logo"
+              id="logo"
+              fluid
+            />
           </Navbar.Brand>
         </div>
         <div>
