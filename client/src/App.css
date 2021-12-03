@@ -53,6 +53,10 @@ h5,
   font-weight: 400;
 }
 
+.form-control {
+  margin-top: 5px;
+}
+
 /* Set the top margin, as well as the background and border colours of the app's buttons. */
 .appbutton {
   margin-top: 10px;
@@ -98,20 +102,21 @@ nav .navbar-collapse.show {
   background: #384449;
   height: 90px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 100% !important;
   position: fixed;
   padding: 0 !important;
+  padding: 0 15px !important;
 }
 
-.nav-container-1 {
+/* .nav-container-1 {
   padding-left: 20px;
   width: 45.5%;
 }
 
 .nav-container-2 {
   width: 54.5%;
-}
+} */
 
 /* Set the padding and font colour of the navigation links. */
 .nav-link {
@@ -159,6 +164,21 @@ nav .navbar-collapse.show {
 /* Set the maximum width of the logo. */
 #logo {
   max-width: 140px;
+}
+
+.admin-login-button {
+  margin-top: -2px;
+  padding: 7px 12px !important;
+  border: #ffffff1a solid 1px !important;
+  border-radius: 0.25rem !important;
+  background: transparent !important;
+  color: #e6e6e6 !important;
+  font-size: 0.9rem !important;
+}
+
+.admin-login-button:hover {
+  background: transparent !important;
+  border: #008080 solid 1px !important;
 }
 
 /* --- Landing Page --- */
@@ -324,6 +344,11 @@ out more. */
   color: teal !important;
 }
 
+/* Set the bottom margin of the input areas. */
+.form-group {
+  margin-bottom: 10px !important;
+}
+
 /* Set the required label's content and the font colour, weight and size. */
 .form-group.required .control-label:after {
   content: "(Required)";
@@ -332,10 +357,11 @@ out more. */
   color: teal;
 }
 
-/* Set the size (height x width) of the message input area. */
+/* Set the size (height x width) and border radius of the message input area. */
 #contactmessage {
   height: 100px;
   width: 350px;
+  border-radius: 5px;
 }
 
 /*** ADMIN PAGE ***/
@@ -384,6 +410,17 @@ out more. */
   padding: 0px !important;
 }
 
+/* Set the padding of the "Add New User" container. */
+#new-user-container {
+  padding-top: 10px !important;
+}
+
+/* Set the padding and bottom margin of the "Add New User" content. */
+#registercontent {
+  padding: 0px;
+  margin-bottom: 10px !important;
+}
+
 /* Set the width, left padding, border radius and the font colour of the user edit input areas. */
 .usereditinput {
   width: 250px !important;
@@ -394,7 +431,7 @@ out more. */
 
 /* Set the minimum height of the project description input area. */
 .project-description-area {
-  min-height: 374px !important;
+  min-height: 382px !important;
 }
 
 /* Set the font colour and weight of the the note word. */

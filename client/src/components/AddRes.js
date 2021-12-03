@@ -3,7 +3,7 @@ import React, { useState } from "react";
 // Requiring Axios.
 import axios from "axios";
 // Imported components from React Bootstrap.
-import { Row, Col, Button } from "react-bootstrap";
+import { FormControl, Row, Col, Button } from "react-bootstrap";
 // Imported Swal from sweetalert2.
 import Swal from "sweetalert2";
 // Imported Font Awesome library and icons.
@@ -80,9 +80,8 @@ const AddRes = (res) => {
       {isOpened && (
         <Row>
           <Col className="col-md-6">
-            <input
+            <FormControl
               type="text"
-              className="form-control mt-1"
               placeholder="Name"
               value={residential}
               onChange={(e) => {
@@ -92,7 +91,7 @@ const AddRes = (res) => {
 
             <textarea
               type="text"
-              className="form-control mt-1 project-description-area"
+              className="form-control project-description-area"
               placeholder="Description"
               value={description}
               onChange={(e) => {
@@ -102,90 +101,80 @@ const AddRes = (res) => {
           </Col>
 
           <Col className="col-md-6">
-            <input
+            <FormControl
               type="text"
-              className="form-control mt-1"
               placeholder="Image URL 1"
               value={image1}
               onChange={(e) => {
                 setImage1(e.target.value);
               }}
             />
-            <input
+            <FormControl
               type="text"
-              className="form-control mt-1"
               placeholder="Image URL 2"
               value={image2}
               onChange={(e) => {
                 setImage2(e.target.value);
               }}
             />
-            <input
+            <FormControl
               type="text"
-              className="form-control mt-1"
               placeholder="Image URL 3"
               value={image3}
               onChange={(e) => {
                 setImage3(e.target.value);
               }}
             />
-            <input
+            <FormControl
               type="text"
-              className="form-control mt-1"
               placeholder="Image URL 4"
               value={image4}
               onChange={(e) => {
                 setImage4(e.target.value);
               }}
-            />{" "}
-            <input
+            />
+            <FormControl
               type="text"
-              className="form-control mt-1"
               placeholder="Image URL 5"
               value={image5}
               onChange={(e) => {
                 setImage5(e.target.value);
               }}
-            />{" "}
-            <input
+            />
+            <FormControl
               type="text"
-              className="form-control mt-1"
               placeholder="Image URL 6"
               value={image6}
               onChange={(e) => {
                 setImage6(e.target.value);
               }}
-            />{" "}
-            <input
+            />
+            <FormControl
               type="text"
-              className="form-control mt-1"
               placeholder="Image URL 7"
               value={image7}
               onChange={(e) => {
                 setImage7(e.target.value);
               }}
-            />{" "}
-            <input
+            />
+            <FormControl
               type="text"
-              className="form-control mt-1"
               placeholder="Image URL 8"
               value={image8}
               onChange={(e) => {
                 setImage8(e.target.value);
               }}
-            />{" "}
-            <input
+            />
+            <FormControl
               type="text"
-              className="form-control mt-1"
               placeholder="Image URL 9"
               value={image9}
               onChange={(e) => {
                 setImage9(e.target.value);
               }}
-            />{" "}
-            <input
+            />
+            <FormControl
               type="text"
-              className="form-control mt-1"
               placeholder="Image URL 10"
               value={image10}
               onChange={(e) => {

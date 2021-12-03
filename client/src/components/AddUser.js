@@ -3,7 +3,10 @@ import React, { useState } from "react";
 // Requiring Axios.
 import axios from "axios";
 // Imported components from React Bootstrap.
-import { Row, Col, Form, FormControl, Button } from "react-bootstrap";
+import { Container, Row, Col, FormControl, Button } from "react-bootstrap";
+// Imported Font Awesome library and icons.
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 // Imported components.
 import Loader from "../components/Loader";
 import Error from "../components/Error";
@@ -25,6 +28,11 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
   const [success, setSuccess] = useState();
+  const [isOpened, setIsOpened] = useState(false);
+
+  const toggle = () => {
+    setIsOpened((wasOpened) => !wasOpened);
+  };
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -36,7 +44,7 @@ const Register = () => {
     };
 
     axios({
-      url: "/api/users/register",
+      url: "/users/register",
       method: "post",
       data: {
         Name: name,
@@ -52,7 +60,7 @@ const Register = () => {
         setSuccess(true);
         localStorage.setItem("currentUser", JSON.stringify(user));
         setTimeout(function () {
-          window.location.href = "/login";
+          window.location.href = "/admin";
         }, 2000);
       })
       .catch((error) => {
@@ -61,18 +69,25 @@ const Register = () => {
   };
 
   return (
-    <div className="bs">
+    <Container id="new-user-container">
+      <Row>
+        <h6 className="admin-subheading">Add New User</h6>
+        <Button
+          className="btn btn-primary appbutton admin-button"
+          onClick={toggle}
+        >
+          <FontAwesomeIcon icon={faPlus} />
+        </Button>
+      </Row>
       {loading && <Loader />}
-      <Row className="authcontainer">
-        <Col className="col-md-5 authcontent" id="registercontent">
-          {error && (
-            <Error message="Something went wrong. Please try again later." />
-          )}
-          {success && <Success message="Registered Successfully." />}
-          <h1>Register</h1>
-          <Form>
+      {isOpened && (
+        <Row>
+          <Col className="col-md-5" id="registercontent">
+            {error && (
+              <Error message="Something went wrong. Please try again later." />
+            )}
+            {success && <Success message="Registered Successfully." />}
             <FormControl
-              className="authinput"
               type="text"
               placeholder="Name"
               value={name}
@@ -81,7 +96,6 @@ const Register = () => {
               }}
             />
             <FormControl
-              className="authinput"
               type="text"
               placeholder="Email"
               value={email}
@@ -90,7 +104,6 @@ const Register = () => {
               }}
             />
             <FormControl
-              className="authinput"
               type="password"
               placeholder="Password"
               value={password}
@@ -98,19 +111,19 @@ const Register = () => {
                 setPassword(e.target.value);
               }}
             />
-          </Form>
-          <Button
-            onClick={(e) => handleRegister(e)}
-            className="appbutton"
-            variant="success"
-          >
-            Register
-          </Button>
-        </Col>
-      </Row>
-    </div>
+            <Button
+              onClick={(e) => handleRegister(e)}
+              className="appbutton"
+              variant="success"
+            >
+              ADD USER
+            </Button>
+          </Col>
+        </Row>
+      )}
+    </Container>
   );
 };
 
-// Exporting Register.js to App.js.
+// Exporting Register.js to Users.js.
 export default Register;

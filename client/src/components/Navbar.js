@@ -1,7 +1,7 @@
 // Imported React library.
 import React from "react";
 // Imported components from React Bootstrap.
-import { Nav, Navbar, Image, NavDropdown } from "react-bootstrap";
+import { Button, Nav, Navbar, Image, NavDropdown } from "react-bootstrap";
 // Importing Font Awesome library.
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -53,6 +53,14 @@ const Navigation = () => {
           <Navbar.Brand href="/">
             <Image src="./images/Logo.png" alt="Logo" id="logo" fluid />
           </Navbar.Brand>
+        </div>
+        <div>
+          <Button
+            className="btn btn-primary appbutton admin-login-button"
+            href="/login"
+          >
+            ADMIN LOGIN
+          </Button>
         </div>
         {/* <div id="authbuttoncontainer">
           <SignUp />

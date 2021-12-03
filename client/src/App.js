@@ -15,7 +15,6 @@ import Services from "./screens/Services";
 import Residential from "./screens/Residential";
 import Commercial from "./screens/Commercial";
 import Contact from "./screens/Contact";
-import Register from "./screens/Register";
 import Login from "./screens/Login";
 import Admin from "./screens/Admin";
 
@@ -50,7 +49,6 @@ const App = (props) => {
             <Route path="/residential/getall" exact component={Residential} />
             <Route path="/commercial/getall" exact component={Commercial} />
             <Route path="/contact" exact component={Contact} />
-            <Route path="/register" exact component={Register} />
             <Route path="/login" exact component={Login} />
             <Route path="/admin" exact component={Admin} />
           </BrowserRouter>

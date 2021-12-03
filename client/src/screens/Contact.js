@@ -111,7 +111,7 @@ const Contact = () => {
             method="post"
             type="text/plain"
           >
-            <Form.Group className="form-group required">
+            <Form.Group className="required">
               <Form.Label name="Name" className="control-label">
                 Name and Surname{" "}
               </Form.Label>
@@ -122,7 +122,7 @@ const Contact = () => {
                 className="contactinput"
               />
             </Form.Group>
-            <Form.Group className="form-group required">
+            <Form.Group className="required">
               <Form.Label name="Email" className="control-label">
                 Email Address{" "}
               </Form.Label>
@@ -133,7 +133,7 @@ const Contact = () => {
                 className="contactinput"
               />
             </Form.Group>
-            <Form.Group className="form-group required">
+            <Form.Group className="required">
               <Form.Label name="Contact" className="control-label">
                 Contact Number{" "}
               </Form.Label>

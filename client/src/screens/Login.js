@@ -3,7 +3,14 @@ import React, { useState } from "react";
 // Requiring Axios.
 import axios from "axios";
 // Imported components from React Bootstrap.
-import { Row, Col, Form, FormControl, Button } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  FormControl,
+  Button,
+} from "react-bootstrap";
 // Imported components.
 import Loader from "../components/Loader";
 import Error from "../components/Error";
@@ -55,16 +62,18 @@ const Login = () => {
   };
 
   return (
-    <div className="bs">
+    <Container>
+      <header>
+        <h1>ADMIN</h1>
+        <h6 className="subheading">&#x2f;&#x2f; LOGIN</h6>
+      </header>
       {loading && <Loader />}
       <Row className="authcontainer">
-        <Col className="col-md-5 authcontent" id="logincontent">
+        <Col className="col-md-5">
           {error && <Error message="Invalid Credentials." />}
           {success && <Success message="Login Successful." />}
-          <h1>Login</h1>
           <Form>
             <FormControl
-              className="authinput"
               type="text"
               placeholder="Email"
               value={email}
@@ -73,7 +82,6 @@ const Login = () => {
               }}
             />
             <FormControl
-              className="authinput"
               type="password"
               placeholder="Password"
               value={password}
@@ -91,7 +99,7 @@ const Login = () => {
           </Button>
         </Col>
       </Row>
-    </div>
+    </Container>
   );
 };
 

@@ -11,7 +11,10 @@ import { Col, Row, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 // Imported Font Awesome library and icons.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faEdit } from "@fortawesome/free-regular-svg-icons";
+// Imported components.
+import AddUser from "../components/AddUser";
 
 /**
  * Set the initial states of the props.
@@ -112,6 +115,9 @@ const Users = () => {
       </Col>
 
       <Col>
+        <Row className="col-md-12">
+          <AddUser />
+        </Row>
         <Row className="col-md-12">
           <h6 className="admin-subheading">Edit User</h6>
           <Button className="btn btn-primary appbutton admin-button">
