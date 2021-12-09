@@ -46,7 +46,7 @@ const Residential = () => {
     (async () => {
       try {
         setLoading(true);
-        const residential = (await axios.get("/residential/getall")).data;
+        const residential = (await axios.get("http://localhost:8080/residential/getall")).data;
         setResProjects(residential);
         setLoading(false);
       } catch (error) {
